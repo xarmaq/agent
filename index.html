@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LC Department | Юридическая компания</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+    <div class="scan-line"></div>
+
+    <main class="container">
+
+        <!-- Header Section -->
+        <header class="hero-section">
+            <h1 class="glitch" data-text="Юридическая компания">Юридическая компания</h1>
+            <p class="subtitle typewriter">LC department – юридическая компания, которая помогает своим клиентам
+                добиваться целей в современном мире.</p>
+            <a href="#team" class="cta-button">Просмотр Адвокатов &rarr;</a>
+        </header>
+
+        <!-- Expertise Section -->
+        <section class="expertise-section reveal-on-scroll">
+            <div class="separator-container">
+                <div class="separator-line"></div>
+            </div>
+            <p class="expertise-text">Мы — юридическая компания широкого профиля и готовы помочь вам по различным
+                вопросам. Регистрируем, вносим изменения в реестр и ликвидируем компании, консультируем по вопросам
+                недвижимости, имущества и наследства.<br> <span class="dimmed">для просмотра адвокатов листните
+                    ниже</span></p>
+        </section>
+
+        <!-- Team Grid (Dossiers) -->
+        <section id="team" class="team-section">
+            <h2 class="section-title reveal-on-scroll">DOSSIERS // ARCHIVE_LC</h2>
+
+            <div class="team-grid">
+                <!-- Dossier 1 -->
+                <div class="dossier-card">
+                    <div class="card-header">
+                        <span class="file-id">ID: 001</span>
+                        <span class="status active">ACTIVE</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Denzel</h3>
+                        <p class="alias">Лёха / @Psychodenzel</p>
+                        <div class="role-badge">Главный Адвокат</div>
+                    </div>
+                </div>
+
+                <!-- Dossier 2 -->
+                <div class="dossier-card">
+                    <div class="card-header">
+                        <span class="file-id">ID: 002</span>
+                        <span class="status active">ACTIVE</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Xeroinov</h3>
+                        <p class="alias">Саша Северный / @Hrnvqq</p>
+                        <div class="role-badge">Заместитель Адвокатуры</div>
+                    </div>
+                </div>
+
+                <!-- Dossier 3 -->
+                <div class="dossier-card">
+                    <div class="card-header">
+                        <span class="file-id">ID: 003</span>
+                        <span class="status active">ACTIVE</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Islamovv</h3>
+                        <p class="alias">Исламов Дагестанский / @Psychoislamovv</p>
+                        <div class="role-badge">Младший Адвокат</div>
+                    </div>
+                </div>
+
+                <!-- Dossier 4 -->
+                <div class="dossier-card">
+                    <div class="card-header">
+                        <span class="file-id">ID: 004</span>
+                        <span class="status pending">TRAINING</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Легинов</h3>
+                        <p class="alias">Легин / @M2dvd</p>
+                        <div class="role-badge">Стажёр Адвокатуры</div>
+                    </div>
+                </div>
+
+                <!-- Dossier 5 -->
+                <div class="dossier-card">
+                    <div class="card-header">
+                        <span class="file-id">ID: 005</span>
+                        <span class="status active">ACTIVE</span>
+                    </div>
+                    <div class="card-body">
+                        <h3>Xeroinov Младший</h3>
+                        <p class="alias">Сын Хероинова / @Kvecy</p>
+                        <div class="role-badge">Адвокат</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Scroll Reveal Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        // observer.unobserve(entry.target); // Optional: Keep observing for re-entry or stop
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal-on-scroll, .dossier-card, .section-title, .expertise-section');
+            revealElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>
