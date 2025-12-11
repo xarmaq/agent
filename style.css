@@ -479,8 +479,8 @@ h1 {
     }
 
     h1 {
-        font-size: 3rem;
-        /* Adjusted for mobile */
+        font-size: 1.3rem;
+        /* Adjusted for mobile - smaller to fit "Юридическая компания" */
         letter-spacing: 0.05em;
         word-break: break-word;
         /* Prevent overflow */
